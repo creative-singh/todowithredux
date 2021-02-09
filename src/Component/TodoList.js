@@ -7,7 +7,7 @@ const TodoList = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div style={{ marginLeft: "30%" }}>
       <ul
         style={{
           listStyle: "none",
