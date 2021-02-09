@@ -20,7 +20,8 @@ const TodoList = () => {
                 id="edit"
                 type="submit"
                 className="editBtn"
-                onClick={() => dispatch(editTodo(data.id))}>
+                // onClick={() => dispatch(editTodo(data.id))}
+              >
                 <i className="fa fa-edit"></i>
               </button>
               <button
