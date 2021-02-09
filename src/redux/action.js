@@ -1,8 +1,10 @@
 export const addtodo = (todo) => (dispatch, getState) => {
-  console.log("--");
   dispatch({
     type: "ADD_TODO",
-    payload: todo,
+    payload: {
+      id: Math.random(),
+      todo,
+    },
   });
 
   localStorage.setItem(
@@ -10,3 +12,17 @@ export const addtodo = (todo) => (dispatch, getState) => {
     JSON.stringify(getState().todos)
   );
 };
+
+export const deleteTodo = (id) => (dispatch, getState) => {
+  dispatch({
+    type: "DELETE_TODO",
+    payload: id,
+  });
+
+  localStorage.setItem(
+    "TODO",
+    JSON.stringify(getState().todos)
+  );
+};
+
+

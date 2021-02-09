@@ -15,8 +15,12 @@ const Form = () => {
   const submitHandler = (e) => {
     try {
       e.preventDefault();
-      dispatch(addtodo(todo));
-      setTodo("");
+      if (todo) {
+        dispatch(addtodo(todo));
+        setTodo("");
+      } else {
+        alert("Please Enter any Todo");
+      }
     } catch (err) {
       console.log("ERROR =>", err);
     }
@@ -35,7 +39,7 @@ const Form = () => {
           className="txtBox"
           placeholder="Enter ToDo"
         />
-        <button type="submit" className="btn">
+        <button id="submit" type="submit" className="btn">
           <i className="fas fa-plus"></i>
         </button>
       </form>
