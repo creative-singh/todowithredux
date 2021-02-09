@@ -25,4 +25,22 @@ export const deleteTodo = (id) => (dispatch, getState) => {
   );
 };
 
+export const editTodo = (data) => (dispatch, getState) => {
+  let newTodo = prompt("Edit Your To Do", data.todo);
 
+  if (newTodo) {
+    dispatch({
+      type: "EDIT_TODO",
+      payload: {
+        id: data.id,
+        todo: newTodo,
+      },
+    });
+    localStorage.setItem(
+      "TODO",
+      JSON.stringify(getState().todos)
+    );
+  } else {
+    alert("Got a blank value");
+  }
+};

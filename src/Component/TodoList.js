@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTodo } from "../redux/action";
+import { editTodo, deleteTodo } from "../redux/action";
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todos);
@@ -15,13 +15,13 @@ const TodoList = () => {
         {todos.map((data) => (
           <li key={data.id} className="todoItem">
             <div>{data.todo}</div>
+
             <div style={{ textAlign: "right" }}>
               <button
                 id="edit"
                 type="submit"
                 className="editBtn"
-                // onClick={() => dispatch(editTodo(data.id))}
-              >
+                onClick={() => dispatch(editTodo(data))}>
                 <i className="fa fa-edit"></i>
               </button>
               <button

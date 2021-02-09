@@ -8,12 +8,20 @@ const todoReducer = (state = { todos: [] }, action) => {
       const data = state.todos.filter(
         (todo) => todo.id !== action.payload
       );
-
-        return {
+      return {
         ...state,
         todos: state.todos.filter(
           (todo) => todo.id !== action.payload
         ),
+      };
+    case "EDIT_TODO":
+      const todoIndex = state.todos.findIndex(
+        (updateTodo) => updateTodo.id === action.payload.id
+      );
+      state.todos[todoIndex].todo = action.payload.todo;
+      return {
+        ...state,
+        todos: [...state.todos],
       };
     default:
       return state;
