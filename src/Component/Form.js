@@ -27,8 +27,7 @@ const Form = () => {
   };
 
   return (
-    <div
-      style={{ paddingTop: "25px", textAlign: "center" }}>
+    <div style={{ textAlign: "center" }}>
       <form onSubmit={submitHandler}>
         <input
           type="text"

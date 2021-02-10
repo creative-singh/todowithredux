@@ -7,14 +7,14 @@ const TodoList = () => {
   const dispatch = useDispatch();
 
   return (
-    <div style={{ marginLeft: "30%" }}>
-      <ul
-        style={{
-          listStyle: "none",
-        }}>
+    <div style={{ textAlign: "center" }}>
+      <ul>
         {todos.map((data) => (
           <li key={data.id} className="todoItem">
-            <div>{data.todo}</div>
+            <div>
+              <input type="checkbox" id="cb" />
+              <label for="cb">{data.todo}</label>
+            </div>
 
             <div style={{ textAlign: "right" }}>
               <button
