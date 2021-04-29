@@ -34,6 +34,7 @@ const Form = () => {
           name="todoContent"
           value={todo}
           onChange={inputHandler}
+          // onChange={(e) => setTitle(e.target.value)}
           autoComplete="off"
           className="txtBox"
           placeholder="Enter ToDo"
